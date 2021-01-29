@@ -1,0 +1,19 @@
+@theme-color:#007fff;
+.fc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fill{
+    width: 0;
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.over-text(@line:3){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @line;
+    overflow: hidden;
+}
