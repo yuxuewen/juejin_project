@@ -1,5 +1,5 @@
 <template>
-    <tag-popup v-model:cate_id="cate_id" @callback='handleChoose' v-if="cate_id"></tag-popup>
+    <tag-popup :cate_id="cate_id" @callback='handleChoose' v-if="cate_id"></tag-popup>
     <list v-model:params="params" v-model:searchMethod='searchMethod'>
          <template v-slot='data'>
                 <article-item  v-for="item in data.scope"  :item='handleResult(item)' :key="item.article_id"  ></article-item>

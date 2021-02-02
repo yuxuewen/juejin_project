@@ -1,8 +1,8 @@
 <template>
 <van-pull-refresh v-model="state.isRefresh" @refresh="onRefresh">
  <van-list
-    v-model:loading="state.loading"
-    v-model:error="state.error"
+    :loading="state.loading"
+    :error="state.error"
     error-text="请求失败，点击重新加载"
     @load="onLoad"
     :offset="50"
@@ -35,7 +35,7 @@ export default {
     }) ;
     let cursor='0';//查询参数之一（分页时用）
     const {params,searchMethod}=props;
-     const searchData=async (params)=>{
+    const searchData=async (params)=>{
          params.cursor=cursor;
          if(cursor==='0') state.list=[]
         try{

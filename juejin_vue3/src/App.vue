@@ -30,5 +30,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 12px;
+  padding: 0 5px;
+}
+p{
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
 }
 </style>

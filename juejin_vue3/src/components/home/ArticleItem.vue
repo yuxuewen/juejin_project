@@ -23,7 +23,7 @@
 </template>
  
 <script>
-import {Image,Divider} from 'vant'
+import {Image} from 'vant'
 import {rem} from '@utils/index'
 export default {
   name: 'article-item',
@@ -53,8 +53,7 @@ export default {
      }
   },
   components: {
-     [Image.name]:Image,
-     [Divider.name]:Divider
+     [Image.name]:Image
     
   }
 }
@@ -63,7 +62,7 @@ export default {
 <style lang='less' scope>
    .top{
      .fc();
-      padding: 5px 10px;
+      padding: 5px 5px;
        .center{
             .fill();
        }

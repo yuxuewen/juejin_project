@@ -42,7 +42,7 @@ export default {
               showOverlay.value=!showOverlay.value;
       }
       const getDomTop=()=>{
-           const {top}=document.querySelector('.tag-top').getBoundingClientRect();
+           const {top}=document.querySelector('.tag-top') && document.querySelector('.tag-top').getBoundingClientRect();
             overlayTop.value=top;
       }
       nextTick(()=>{

@@ -22,7 +22,15 @@ export default {
 
       // tabs 切换
       const onChange = (activeName) => {
-          router.push({name:activeName})
+          let params=null;
+          tabsRouter.forEach(({name,meta}) => {
+              if(activeName===name && meta && meta.params)
+              {
+                  params=meta.params;
+
+              }
+          });
+          router.push({name:activeName,params:params})
       };
 
        function getCurr(route){
