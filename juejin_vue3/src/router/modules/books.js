@@ -34,3 +34,11 @@ export const books={
             index:200
       }
 }
+
+export const booksDetial={
+      path:'/book/:id',
+      title:'小册详情',
+      name:'book-detial',
+      component:()=>import('@view/books/modules/detial.vue'),
+    
+}

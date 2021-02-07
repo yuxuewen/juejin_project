@@ -1,11 +1,13 @@
 <template>
      <transition :name="transitionRoute">
-         <router-view/>
+          <keep-alive>
+                 <router-view
+                 />
+          </keep-alive>
      </transition>
 </template>
 
 <script>
-
 import {onBeforeRouteUpdate} from 'vue-router'
 import {ref} from 'vue'
 export default {
@@ -16,7 +18,6 @@ export default {
             
               const {index:toIndex}=to.meta ||{};
               const {index:fromIndex}=from.meta ||{};
-              
              if(toIndex >fromIndex){
                    transitionRoute.value='van-slide-left'
              }
@@ -25,7 +26,8 @@ export default {
              }
       })
     return {
-         transitionRoute
+         transitionRoute,
+      
     }
    
   },

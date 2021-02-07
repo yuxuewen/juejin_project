@@ -1,4 +1,5 @@
 <template>
+   
      <div class='top'>
          <van-image round lay-load :src='avatar_large' :width='iconWidth' :height='iconWidth'></van-image>
          <span class="center">{{user_name}}</span>
@@ -12,18 +13,17 @@
               </p>
           </div>
           <div class="right" v-if="cover_image">
-                <van-image round lay-load :src='cover_image' :width='coverWidth' :height='coverWidth'></van-image>
+                <van-image  lay-load :src='cover_image' :width='coverWidth' :height='coverWidth'></van-image>
           </div>
      </div>
      <div class="bottom">
           <van-icon name="good-job-o"> <span class='num'> {{digg_count}}</span> </van-icon>
           <van-icon name="comment-o"><span class='num'>{{comment_count}}</span></van-icon>
      </div>
-     <van-divider style="margin:0"/>
+     <van-divider style="margin:0" class='item-divider'/>
 </template>
  
 <script>
-import {Image} from 'vant'
 import {rem} from '@utils/index'
 export default {
   name: 'article-item',
@@ -53,13 +53,12 @@ export default {
      }
   },
   components: {
-     [Image.name]:Image
     
   }
 }
 </script>
 
-<style lang='less' scope>
+<style lang='less' scoped>
    .top{
      .fc();
       padding: 5px 5px;

@@ -38,14 +38,11 @@ api.interceptors.response.use(
 async function  httpRequest(method,path,query={}){
    
     try {
-
          return await api[method](path,query);
-       
     }
     catch(e){
         console.log(e);
         return e;
-
     }
 }
 

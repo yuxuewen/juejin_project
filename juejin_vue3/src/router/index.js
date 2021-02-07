@@ -4,14 +4,12 @@
 import { createRouter, createWebHashHistory,useRouter } from 'vue-router'
  import {home} from './modules/home'
  import {pin} from './modules/pin'
- import {books} from './modules/books'
+ import {books,booksDetial} from './modules/books'
  import {user} from './modules/user'
 
  export const tabsRouter=[
       home,pin,books,user
  ]
-
-console.log(...tabsRouter)
 export const router=new createRouter({
      history:createWebHashHistory(),
      routes:[
@@ -21,6 +19,7 @@ export const router=new createRouter({
               component:()=>import('@view/layout/index'),
               children:tabsRouter
          },
+         booksDetial,
          
      //     {
      //          path:'*',

@@ -28,14 +28,12 @@
                   <van-icon name="share-o" >分享</van-icon>
                </van-col>
       </van-row>
-     <van-divider style="margin:0"/>
+     <van-divider class='item-divider'/>
 </template>
  
 <script>
-import {Image,Divider} from 'vant'
 import {rem} from '@utils/index'
 import checkImage from '@components/image/checkImage'
-import { computed } from 'vue';
 export default {
   name: 'pin-item',
   props:{
@@ -64,9 +62,7 @@ export default {
     
   },
   components: {
-     [Image.name]:Image,
      [checkImage.name]:checkImage,
-     [Divider.name]:Divider
     
   }
 }

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {Image,Overlay} from 'vant'
+import {Overlay} from 'vant'
 import {ref} from 'vue'
 export default {
   name: 'check-image',
@@ -27,7 +27,6 @@ export default {
      }
   },
   components: {
-    [Image.name]:Image,
     [Overlay.name]:Overlay
   }
 }

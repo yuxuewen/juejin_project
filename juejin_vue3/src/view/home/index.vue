@@ -14,9 +14,9 @@
             <van-tab :title="title" v-for='({name,title}) in tabsData' :key="name" :name="name"></van-tab>
          </van-tabs> 
      </van-sticky>
-    
-    
-     <my-router-view/>
+    <scroll-components @h-scroll='handleScroll'>
+         <my-router-view />
+    </scroll-components>
 </template>
 
 <script>
@@ -27,6 +27,8 @@ import {children} from '@router/modules/home'
 import { useRouter,useRoute } from 'vue-router'
 import TagPopup from '@components/home/TagPopup'
 import routerView from '@components/routerView/index'
+import scrollComponents from '@components/scrollComponents/index'
+
 export default {
   name: 'books',
   setup(){
@@ -40,6 +42,29 @@ export default {
      }
      const onChange=(name)=>{
            router.push({name:name})
+            active.value=name;
+     }
+
+      const handleScroll=(direction)=>{
+          let curIndex=0;
+          children.forEach(({name},index) => {
+               if(name===active.value)
+               {
+                  curIndex=index;
+                  return;
+               }
+          });
+   
+          if(direction==='right')
+          {
+            //  router.push({name:children[curIndex+1].name})
+            
+             onChange(children[curIndex+1].name)
+          }
+         if(direction==='left')
+          {
+            onChange(children[curIndex-1].name)
+          }
      }
      /**
       * 路由变化 active值变更
@@ -52,6 +77,7 @@ export default {
          searchValue,
          tabsData:children,
          onSearch,
+         handleScroll,
          onChange,
          active
      }
@@ -62,6 +88,7 @@ export default {
      [Tabs.name]:Tabs,
      [Popup.name]:Popup,
      [TagPopup.name]:TagPopup,
+     [scrollComponents.name]:scrollComponents,
      [routerView.name]:routerView,
      [Sticky.name]:Sticky,
      

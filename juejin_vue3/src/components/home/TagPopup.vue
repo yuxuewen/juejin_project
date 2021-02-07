@@ -42,7 +42,8 @@ export default {
               showOverlay.value=!showOverlay.value;
       }
       const getDomTop=()=>{
-           const {top}=document.querySelector('.tag-top') && document.querySelector('.tag-top').getBoundingClientRect();
+           if(!document.querySelector('.tag-top')) return;
+            const {top}= document.querySelector('.tag-top').getBoundingClientRect();
             overlayTop.value=top;
       }
       nextTick(()=>{
@@ -96,7 +97,7 @@ export default {
 }
 </script>
 
-<style lang='less' scope>
+<style lang='less' scoped>
       .tag-top{
          .fc();
            align-items: flex-start;

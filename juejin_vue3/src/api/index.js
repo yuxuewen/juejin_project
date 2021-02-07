@@ -8,4 +8,5 @@ export default {
     getRecommendTagTopicList:(params)=>http.post('/api/recommend_api/v1/tag/recommend_topic_list',params),  
     getTopicList:(params)=>http.post('/api/recommend_api/v1/short_msg/topic',params),  
     getBooksList:(params)=>http.post('/api/booklet_api/v1/booklet/listbycategory',params),  //掘金小册列表
+    getBookDetial:(params)=>http.post('/api/booklet_api/v1/booklet/get',params),  //掘金小册列表
 }
